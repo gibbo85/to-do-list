@@ -1,0 +1,25 @@
+
+<body>
+  <div class="grid">
+
+    <div class="title">
+        <h1>Anthony's To-do List</h1>
+    </div>
+
+    <div class="tasks">
+      <ul>
+      <% @all_tasks.each do |p| %>
+        <li><%= p.task %></li>
+      <% end %>
+      </ul>
+    </div>
+
+    <div class="form" autocomlete='off'>
+      <%= form_for(@new_task) do |f| %>
+      <%= f.text_field :task, :placeholder => "Type in your task here", :autocomplete => :off, :autofocus => true%>
+      <%= f.submit "Add", :class => "btn"%>
+      <% end %>
+    </div>
+
+  </div>
+</body>
